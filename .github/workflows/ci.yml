@@ -10,5 +10,4 @@ jobs:
       - run: uv run ruff check .
       - run: uv run ruff format --check .
       - run: uv run ty check
-      - run: uv run pytest --cov --cov-fail-under=80
-      
+      - run: uv run pytest --cov=creat_password --cov-fail-under=80      
