@@ -83,6 +83,8 @@ def test_password_requires_mixed_case_islower_and_isuper(test_input, expected):
         ),
     ],
 )
-def test_password_requires_mixed_case_number_and_special_characters(test_input, expected):
+def test_password_requires_mixed_case_number_and_special_characters(
+    test_input, expected
+):
     result = check_password_strength(test_input)
     assert result == expected
