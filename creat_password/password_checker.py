@@ -2,7 +2,7 @@ import random
 import string
 
 
-def check_password_strength(password: str) -> dict:
+def check_password_strength(password: str):
     score = 0
     feedback = []
 
