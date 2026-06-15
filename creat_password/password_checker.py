@@ -1,4 +1,3 @@
-import random
 import string
 
 
@@ -33,28 +32,3 @@ def check_password_strength(password: str):
         feedback.append("Password should include special characters.")
 
     return {"score": score, "feedback": feedback, "is_strong": score == 5}
-
-
-def generate_password(length: int = 12) -> str:
-    if length < 4:
-        raise ValueError("Length must be at least 4 to ensure variety.")
-
-    all_lowercase = string.ascii_lowercase
-    all_uppercase = string.ascii_uppercase
-    all_digits = string.digits
-    all_special = string.punctuation
-
-    password_template = [
-        random.choice(all_lowercase),
-        random.choice(all_uppercase),
-        random.choice(all_digits),
-        random.choice(all_special),
-    ]
-
-    combined_chars = all_lowercase + all_uppercase + all_digits + all_special
-    password_template += [
-        random.choice(combined_chars) for _ in range(length - 4)
-    ]
-    random.shuffle(password_template)
-    return "".join(password_template)
-
